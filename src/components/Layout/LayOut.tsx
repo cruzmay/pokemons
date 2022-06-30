@@ -20,7 +20,6 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { ApiCall } from '../../Api/ApiCall';
 import { Outlet } from 'react-router-dom';
-import axios from 'axios';
 
 const drawerWidth = 240;
 
@@ -102,6 +101,7 @@ export default function LayOut() {
 
   React.useEffect(() => {
      ApiCall().then(console.log)
+     console.log("here")
     //  .then( res => res.data.results)
     //  .then(data => Promise.all(data.map( (d:any) => axios.get(d.url))))
     //  .then(data => data.map((data:any) => data.data))

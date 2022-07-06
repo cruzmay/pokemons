@@ -44,16 +44,10 @@ export const ApiCall = async () => {
         gender: data.name,
         pokemonOnthisGender: data.pokemon_species_details.map((data) => ({
           name: data.pokemon_species.name,
-          gender_id: parseInt(
-            data.pokemon_species.url
-              .slice(URL_LONG)
-              .match(/\d+/g)
-              .reduce((a, b) => a + b)
-          ),
+          gender_id: parseInt(data.pokemon_species.url.match(/\d+/g).pop()),
         })),
       }))
     );
-
   //evolution chain
   const evolutionChain = await instance
     .get("evolution-chain?limit=468")
